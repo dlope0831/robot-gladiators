@@ -139,17 +139,15 @@ var shop = function() {
     case 'refill':
       playerInfo.refillHealth();
       break;
-    }
-    else {
-        window.alert("You don't have enough money!");
-    }
+  } else { 
+      window.alert("You don't have enough money!");
+  }
       break;
     case 'UPGRADE':
     case 'upgrade':
       playerInfo.upgradeAttack();
       break;
-    }
-    else {
+  } else {
         window.alert("You don't have enough money!");
     }
       break;
@@ -173,8 +171,14 @@ var randomNumber = function(min, max) {
 
   return value;
 };
+// function to set name
+var getPlayerName = function() {
+  var name = "";
+  while (name === ""|| name === null) {
+    name = prompt("What is your robot's name?");
+  }
 var playerInfo = {
-  name: window.prompt("What is your robot's name?"),
+  name: getPlayerName(),
   health: 100,
   attack: 10,
   money: 10,
@@ -195,6 +199,7 @@ upgradeAttack:function() {
   this.money -= 7;
  }
 };
+
 
 var enemyInfo = [
   {
