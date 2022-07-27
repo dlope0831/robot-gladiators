@@ -134,33 +134,22 @@ var shop = function() {
   );
 
   // use switch case to carry out action
+  shopOptionPrompt = parseInt(shopOptionPrompt);
+  var shopOptionPrompt = window.alert (
+    "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE."
+    );
   switch (shopOptionPrompt) {
-    case 'REFILL':
-    case 'refill':
+    case 1:
       playerInfo.refillHealth();
       break;
-  } else { 
-      window.alert("You don't have enough money!");
-  }
-      break;
-    case 'UPGRADE':
-    case 'upgrade':
+    case 2:
       playerInfo.upgradeAttack();
       break;
-  } else {
-        window.alert("You don't have enough money!");
-    }
-      break;
-    case 'LEAVE':
-    case 'leave':
+    case 3:
       window.alert('Leaving the store.');
-
-      // do nothing, so function will end
       break;
     default:
       window.alert('You did not pick a valid option. Try again.');
-
-      // call shop() again to force player to pick a valid option
       shop();
       break;
   }
